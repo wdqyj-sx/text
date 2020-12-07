@@ -1,0 +1,37 @@
+.header {
+    background-color: #ffffff;
+    .header-top {
+        height: 60px;
+        padding:0 30px;
+        line-height: 60px;
+        text-align: right;
+        .login {
+            margin-left: 20px;
+        }
+    }
+    .header-btm {
+        height: 40px;
+        padding: 0 30px;
+        border-top: 1px solid #1DA57A;
+        line-height: 40px;
+        .btm-title {
+            text-align: center;
+            &:after{
+                position: absolute;
+                content: ' ';
+                border-top: 9px solid #ffffff;
+                border-left: 12px solid transparent;
+                border-right: 12px solid transparent;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 39px;
+            }
+        }
+        .btm-mes {
+            text-align: right;
+            .nowWeather {
+                margin-left: 20px;
+            }
+        }
+    }
+}

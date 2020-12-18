@@ -4,6 +4,7 @@ import App from "./App";
 import Admin from "./admin";
 import Text from "./page/text";
 import Content from "./page/Content";
+import Button from "./page/Button";
 
 export default class Router extends React.Component{
     render(){
@@ -14,7 +15,7 @@ export default class Router extends React.Component{
                     <Route path="/admin" render={()=>
                         <Admin>
                             <Route exact path="/admin/home" component={Content}></Route>
-                            <Route path="/admin/ui/buttons" component={Text}></Route>
+                            <Route path="/admin/ui/buttons" component={Button}></Route>
                         </Admin>
                     }></Route>
                 </App>

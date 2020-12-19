@@ -1,9 +1,22 @@
 import React from "react";
 import "./index.less";
 import { Card,Button } from "antd";
-import { PlusOutlined,EditOutlined ,DeleteOutlined,SearchOutlined,DownloadOutlined,LoadingOutlined} from "@ant-design/icons";
+import { PlusOutlined,EditOutlined ,DeleteOutlined,SearchOutlined,DownloadOutlined,LeftOutlined,RightOutlined} from "@ant-design/icons";
 
 export default class Buttons extends React.Component{
+    state = {
+        loading:true
+    }
+    stopLoading = ()=>{
+        this.setState({
+            loading:false
+        })
+    }
+    beginLoading = ()=>{
+        this.setState({
+            loading:true
+        })
+    }
     render(){
         return(
             <div className="wrap">
@@ -18,17 +31,23 @@ export default class Buttons extends React.Component{
                    <Button icon={<PlusOutlined />} className="button">创建</Button>
                    <Button icon={<EditOutlined />} className="button">编辑</Button>
                    <Button icon={<DeleteOutlined />} className="button">删除</Button>
-                   <Button icon={<SearchOutlined />} className="button"> </Button>
+                   <Button icon={<SearchOutlined />} className="button" shape="circle"></Button>
                    <Button icon={<SearchOutlined />} className="button">搜索</Button>
                    <Button icon={<DownloadOutlined />}>下载</Button>
                 </Card>
                 <Card title="Loading按钮" className="card">
-                   <Button icon={  <LoadingOutlined />} type="primary" className="button">确定</Button>
-                   <Button icon={  <LoadingOutlined />} type="primary" className="button"></Button>
-                   <Button icon={  <LoadingOutlined />} type="default" className="button">点击加载</Button>
-                   <Button icon={  <LoadingOutlined />} className="button"> </Button>
-                   <Button icon={<SearchOutlined />} className="button">搜索</Button>
-                   <Button icon={<DownloadOutlined />}>下载</Button>
+                   <Button  type="primary" className="button" loading={this.state.loading} onClick={()=>this.beginLoading()}>确定</Button>
+                   <Button type="primary" className="button" shape="circle" loading={this.state.loading} onClick={()=>this.beginLoading()}></Button>
+                   <Button  type="default" className="button" loading={this.state.loading} onClick={()=>this.beginLoading()}>点击加载</Button>
+                   <Button type="default" className="button" shape="circle" loading={this.state.loading} onClick={()=>this.beginLoading()}></Button>
+                   <Button type="primary" onClick={()=>this.stopLoading()}>关闭</Button>
+                  
+                </Card>
+                <Card title="按钮组" className="card">
+                    <Button.Group>
+                        <Button icon={<LeftOutlined />} type="primary">返回</Button>
+                        <Button icon={<RightOutlined />}>前进</Button>
+                    </Button.Group>
                 </Card>
             </div>
         )

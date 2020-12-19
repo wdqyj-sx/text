@@ -2,9 +2,9 @@ import React from "react";
 import {HashRouter,Route} from 'react-router-dom';
 import App from "./App";
 import Admin from "./admin";
-import Text from "./page/text";
 import Content from "./page/Content";
 import Button from "./page/Button";
+import Model from "./page/Model";
 
 export default class Router extends React.Component{
     render(){
@@ -16,6 +16,7 @@ export default class Router extends React.Component{
                         <Admin>
                             <Route exact path="/admin/home" component={Content}></Route>
                             <Route path="/admin/ui/buttons" component={Button}></Route>
+                            <Route path="/admin/ui/modals" component={Model}></Route>
                         </Admin>
                     }></Route>
                 </App>

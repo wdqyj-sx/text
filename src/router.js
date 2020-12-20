@@ -9,6 +9,7 @@ import Spins from "./page/Spins/index";
 import Notification from "./page/Notification";
 import Message from "./page/Message";
 import Tabs from "./page/tab";
+import Form from "./page/form/login";
 
 export default class Router extends React.Component{
     render(){
@@ -25,7 +26,7 @@ export default class Router extends React.Component{
                             <Route path="/admin/ui/notification" component={Notification}></Route>
                             <Route path="/admin/ui/messages" component={Message}></Route>
                             <Route path="/admin/ui/tabs" component={Tabs}></Route>
-
+                            <Route path="/admin/form/login" component={Form}></Route>
                         </Admin>
                     }></Route>
                 </App>

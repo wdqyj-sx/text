@@ -20,6 +20,18 @@ export default class Model extends React.Component{
             [type]:false
         })
     }
+    showConfirm=(type)=>{
+        Modal[type]({
+            title:'彩虹',
+            content:'你要离开，我知道很简单',
+            onOk(){
+                console.log('ok')
+            },
+            onCancel(){
+                console.log('cancel')
+            }
+        })
+    }
     render(){
       
         return(
@@ -29,6 +41,12 @@ export default class Model extends React.Component{
                     <Button type="primary" onClick={()=>{this.showModal('flag2')}}>自定义页脚</Button>
                     <Button type="primary" onClick={()=>{this.showModal('flag3')}}>顶部20px弹框</Button>
                     <Button type="primary" onClick={()=>{this.showModal('flag4')}}>水平垂直居中</Button>
+                </Card>
+                <Card title="信息确认框">
+                    <Button type="primary" onClick={()=>{this.showConfirm('confirm')}}>Confirm</Button>
+                    <Button type="primary" onClick={()=>{this.showConfirm('info')}}>Info</Button>
+                    <Button type="primary" onClick={()=>{this.showConfirm('success')}}>Success</Button>
+                    <Button type="primary" onClick={()=>{this.showConfirm('warning')}}>Warn</Button>
                 </Card>
                <Modal title="基础模态框" visible={this.state.flag1} onOk={()=>{this.disableModal('flag1')}} onCancel={()=>{this.disableModal('flag1')}}>
                    <p>繁华声遁入空门，折煞了世人</p>

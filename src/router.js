@@ -11,6 +11,7 @@ import Message from "./page/Message";
 import Tabs from "./page/tab";
 import Form from "./page/form/login";
 import Res from "./page/form/index2";
+import BaseTable from "./page/table/baseTable";
 
 export default class Router extends React.Component{
     render(){
@@ -29,6 +30,7 @@ export default class Router extends React.Component{
                             <Route path="/admin/ui/tabs" component={Tabs}></Route>
                             <Route path="/admin/form/login" component={Form}></Route>
                             <Route  path="/admin/form/reg" component={Res}></Route>
+                            <Route path="/admin/table/basic" component={BaseTable}></Route>
                         </Admin>
                     }></Route>
                 </App>
